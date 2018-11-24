@@ -4,7 +4,14 @@
  * and open the template in the editor.
  */
 package Main;
-
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author ashra
@@ -27,22 +34,273 @@ public class StaffPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        manager = new javax.swing.JDialog();
+        m = new javax.swing.JScrollPane();
+        tb3 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tb4 = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        lb1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tb2 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        manager.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        manager.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        manager.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        manager.setSize(new java.awt.Dimension(1920, 1080));
+        manager.getContentPane().setLayout(null);
+
+        tb3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "StaffID", "Staff Name", "Job Type", "Salary", "RoomID", "Type", "Cost"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        m.setViewportView(tb3);
+
+        manager.getContentPane().add(m);
+        m.setBounds(60, 350, 840, 402);
+
+        tb4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "CustomerID", "First Name", "Last Name", "RoomID", "ReservationID", "PaymentID"
+            }
+        ));
+        jScrollPane2.setViewportView(tb4);
+
+        manager.getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(1190, 350, 640, 402);
+
+        jButton3.setText("View Staff Details");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        manager.getContentPane().add(jButton3);
+        jButton3.setBounds(300, 250, 180, 40);
+
+        jButton4.setText("View Customer Details");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        manager.getContentPane().add(jButton4);
+        jButton4.setBounds(1320, 240, 200, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds/mgr.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        manager.getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 1920, 1080);
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        setSize(new java.awt.Dimension(1920, 1080));
+        getContentPane().setLayout(null);
+
+        jButton1.setText("View Assigned Job");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(530, 60, 350, 60);
+
+        lb1.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
+        lb1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(lb1);
+        lb1.setBounds(460, 290, 510, 50);
+
+        tb2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "RoomID", "Type"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tb2);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(500, 400, 410, 90);
+
+        jButton2.setText("Manager Function");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(1060, 60, 240, 60);
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds/Staff_Page.jpg"))); // NOI18N
+        jLabel1.setText("BLANK");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1920, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+static final String DB_URL="jdbc:mysql://localhost/resort";
+static final String USER="root";
+static final String PASS="ashray123";
+Connection con;
+ResultSet rs;
+Statement stmt;
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  
+ DefaultTableModel model=(DefaultTableModel)tb2.getModel();
+        try{
+            staff_id="S002";
+           //staff_id = new String(Files.readAllBytes(Paths.get("C:\\Users\\ashra\\OneDrive\\Documents\\NetBeansProjects\\SylvanGladeResort\\src\\Main\\filename.txt")));
+         Class.forName("java.sql.Driver");
+         con=DriverManager.getConnection(DB_URL,USER,PASS); 
+         stmt=con.createStatement();
+         String query = "SELECT S.STAFFID,S.SNAME,R.ROOMID,R.TYPE "
+                 + "FROM STAFF S, ROOMS R,ASSIGN A "
+                 + "WHERE S.STAFFID=A.STAFFID "
+                 + "AND  R.ROOMID=A.ROOMID "
+                 + "AND S.STAFFID='"+staff_id+"';";
+         rs=stmt.executeQuery(query);
+         rs.first();
+         String s_id=rs.getString(1);
+         String staff_name=rs.getString(2);
+         lb1.setText("Staff ID : "+s_id+"\n"+"Name : "+staff_name);
+         String roomid,type;
+         while(rs.next()){
+             roomid=rs.getString(3);
+             type=rs.getString(4);
+              model.addRow(new Object[]{roomid,type});
+         }
+   }
+   catch(Exception e){
+       
+   }
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            //staff_id=new String(Files.readAllBytes(Paths.get("C:\\Users\\ashra\\OneDrive\\Documents\\NetBeansProjects\\SylvanGladeResort\\src\\Main\\filename.txt")));
+            staff_id="M001";
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "ERROR");
+        }
+        if(staff_id.startsWith("M")){
+    manager.setVisible(true);
+    this.setVisible(false);
+}
+else{
+        JOptionPane.showMessageDialog(this,"You are not a manager");
+    }
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        DefaultTableModel model=(DefaultTableModel) tb3.getModel();
+                
+        try{
+        Class.forName("java.sql.Driver");
+        con=DriverManager.getConnection(DB_URL,USER,PASS); 
+        stmt=con.createStatement();
+        String query="SELECT S.STAFFID,S.SNAME,S.JOB,S.SALARY,R.ROOMID,R.TYPE,R.COST "
+                + "FROM STAFF S, ROOMS R, ASSIGN A "
+                + "WHERE S.STAFFID=A.STAFFID "
+                + "AND R.ROOMID=A.ROOMID "
+                + "ORDER BY STAFFID";
+        rs=stmt.executeQuery(query);
+        while(rs.next()){
+            String sid=rs.getString(1);
+            String sname=rs.getString(2);
+            String job=rs.getString(3);
+            int sal=rs.getInt(4);
+            String rid=rs.getString(5);
+            String type=rs.getString(6);
+            int cost=rs.getInt(7);
+            model.addRow(new Object[]{sid,sname,job,sal,rid,type,cost}); 
+        }
+}
+catch(Exception e){
+    e.printStackTrace();
+}
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+     
+        DefaultTableModel model=(DefaultTableModel) tb4.getModel();
+                
+        try{
+        Class.forName("java.sql.Driver");
+        con=DriverManager.getConnection(DB_URL,USER,PASS); 
+        stmt=con.createStatement();
+        String query="SELECT C.CUSTOMERID,C.FNAME,C.LNAME,R.ROOMID,RS.RESERVATIONID,P.PAYMENTID "
+                + "FROM CUSTOMER C, ROOMS R, RESERVATION RS, PAYMENT P "
+                + "WHERE C.CUSTOMERID=RS.CUSTOMERID "
+                + "AND C.CUSTOMERID=P.CUSTOMERID "
+                + "AND RS.RESERVATIONID=P.RESERVATIONID "
+                + "AND R.ROOMID=RS.ROOMID;";
+        rs=stmt.executeQuery(query);
+        while(rs.next()){
+            String cid=rs.getString(1);
+            String fname=rs.getString(2);
+            String lname=rs.getString(3);
+            String rid=rs.getString(4);
+            String resid=rs.getString(5);
+            String pay=rs.getString(6);
+            model.addRow(new Object[]{cid,fname,lname,rid,resid,pay}); 
+        }
+}
+catch(Exception e){
+    e.printStackTrace();
+}   // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+String staff_id;
     /**
      * @param args the command line arguments
      */
@@ -79,5 +337,19 @@ public class StaffPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lb1;
+    private javax.swing.JScrollPane m;
+    private javax.swing.JDialog manager;
+    private javax.swing.JTable tb2;
+    private javax.swing.JTable tb3;
+    private javax.swing.JTable tb4;
     // End of variables declaration//GEN-END:variables
 }

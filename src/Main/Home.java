@@ -50,7 +50,7 @@ public class Home extends javax.swing.JFrame {
         spindur = new javax.swing.JSpinner();
         spincap = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        activitycbox = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         disp = new javax.swing.JButton();
         srcbtn = new javax.swing.JButton();
@@ -63,10 +63,15 @@ public class Home extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        payment = new javax.swing.JDialog();
+        payment_status = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         reservebtn = new javax.swing.JButton();
         faciliiesbtn = new javax.swing.JButton();
         abtbtn = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         reserve.setMinimumSize(new java.awt.Dimension(1920, 1080));
@@ -147,10 +152,10 @@ public class Home extends javax.swing.JFrame {
         reserve.getContentPane().add(jLabel6);
         jLabel6.setBounds(1300, 390, 170, 40);
 
-        jComboBox1.setFont(new java.awt.Font("BlackChancery", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None" }));
-        reserve.getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(1530, 390, 320, 40);
+        activitycbox.setFont(new java.awt.Font("BlackChancery", 0, 24)); // NOI18N
+        activitycbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Minimal", "Standard", "Deluxe", "Supreme", "Complete", " " }));
+        reserve.getContentPane().add(activitycbox);
+        activitycbox.setBounds(1530, 390, 320, 40);
 
         jLabel7.setFont(new java.awt.Font("BlackChancery", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,14 +186,14 @@ public class Home extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
-        jButton2.setText("Book");
+        jButton2.setText("Proceed to Payment");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         reserve.getContentPane().add(jButton2);
-        jButton2.setBounds(1220, 610, 260, 70);
+        jButton2.setBounds(1240, 610, 360, 70);
 
         roomtype.setFont(new java.awt.Font("BlackChancery", 0, 24)); // NOI18N
         roomtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Standard", "Deluxe", "Superior", "Executive" }));
@@ -202,7 +207,7 @@ public class Home extends javax.swing.JFrame {
         jLabel10.setBounds(1300, 330, 170, 40);
 
         bg.setFont(new java.awt.Font("BlackChancery", 0, 24)); // NOI18N
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds/main2.jpg"))); // NOI18N
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds/Payment.png"))); // NOI18N
         bg.setText("jLabel4");
         reserve.getContentPane().add(bg);
         bg.setBounds(0, 0, 1920, 1080);
@@ -239,6 +244,19 @@ public class Home extends javax.swing.JFrame {
         abt.getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 1920, 1080);
 
+        payment.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        payment.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        payment.getContentPane().setLayout(null);
+
+        payment_status.setText("LABEL FOR DISPLAYING STATUS");
+        payment.getContentPane().add(payment_status);
+        payment_status.setBounds(120, 460, 240, 520);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds/reserve.jpg"))); // NOI18N
+        jLabel11.setText("jLabel11");
+        payment.getContentPane().add(jLabel11);
+        jLabel11.setBounds(0, 0, 1920, 1080);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
@@ -260,7 +278,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(reservebtn);
-        reservebtn.setBounds(1440, 230, 380, 50);
+        reservebtn.setBounds(1450, 230, 370, 60);
 
         faciliiesbtn.setBackground(new java.awt.Color(0, 0, 0));
         faciliiesbtn.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
@@ -282,6 +300,30 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(abtbtn);
         abtbtn.setBounds(1450, 440, 370, 60);
 
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("View Reservation Status");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(80, 220, 410, 60);
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Check Out");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(80, 310, 410, 60);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Backgrounds/main.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
@@ -297,10 +339,11 @@ ResultSet rs;
 Statement stmt;
     private void reservebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservebtnActionPerformed
 try{
+    cust_id = new String(Files.readAllBytes(Paths.get("C:\\Users\\ashra\\OneDrive\\Documents\\NetBeansProjects\\SylvanGladeResort\\src\\Main\\filename.txt")));
     Class.forName("java.sql.Driver");
     con=DriverManager.getConnection(DB_URL,USER,PASS);
     stmt=con.createStatement();
-    String check = "";
+    String check = "SELECT RESERVATIONID FROM RESERVATION WHERE CUSTOMERID='"+cust_id+"';";
     rs=stmt.executeQuery(check);
     if(rs.first()==false){
          reserve.setVisible(true);
@@ -308,6 +351,7 @@ try{
     }
     else{
         JOptionPane.showMessageDialog(this,"YOU HAVE ALREADY RESERVED A ROOM");
+        reservebtn.disable();
     }
 }
 
@@ -333,7 +377,8 @@ catch(Exception e){
     private void dispActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dispActionPerformed
 
 DefaultTableModel model = (DefaultTableModel) tb.getModel();                            //SETS MODEL TO CURRENT TABLE
-try{                                                                                    //TO DISPLAY ALL AVAILABLE ROOMS
+try{   
+    //TO DISPLAY ALL AVAILABLE ROOMS
     model.setRowCount(0);
     Class.forName("java.sql.Driver");
     con=DriverManager.getConnection(DB_URL, USER, PASS);
@@ -415,6 +460,27 @@ public String incpay(String a){
     String result=initial+initial_append;
     return result;
 }
+public String selectactivity(int activityindex){
+  String activity="";
+    switch(activityindex){
+       case 0: activity="A001";
+               break;
+       case 1: activity="A002";
+               break;
+       case 2: activity="A003";
+               break;
+       case 3: activity="A004";
+               break;
+       case 4: activity="A005";
+               break;
+       case 5: activity="A006";
+               break;       
+       default: activity="A001";
+               break;              
+   } 
+return activity;
+}
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 try {
  cust_id = new String(Files.readAllBytes(Paths.get("C:\\Users\\ashra\\OneDrive\\Documents\\NetBeansProjects\\SylvanGladeResort\\src\\Main\\filename.txt")));
@@ -424,8 +490,10 @@ try {
 int d = Integer.parseInt((String) day.getSelectedItem());
 int m =  Integer.parseInt((String)month.getSelectedItem());
 int y = Integer.parseInt((String) year.getSelectedItem());
+int pkgindex=activitycbox.getSelectedIndex();
+String activity=selectactivity(pkgindex);
 String cdate = ""+y+"/"+m+"/"+""+d;
-int duration=(int)spindur.getValue();
+duration=(int)spindur.getValue();
 int coutday=d+duration;
 String cout=""+y+"/"+m+"/"+""+coutday;
 DefaultTableModel bookmodel = (DefaultTableModel) tb.getModel();
@@ -443,7 +511,9 @@ try{
     rs.last();
     resid=rs.getInt(1);
     reserveid=resid+1;
-    String insert="INSERT INTO RESERVATION(RESERVATIONID,CHECKIN,CHECKOUT,ROOMID,CUSTOMERID) VALUES("+reserveid+",'"+cdate+"','"+cout+"','"+roomid+"','"+cust_id+"')";
+        String update_room="UPDATE ROOMS SET STATUS ='R' WHERE ROOMID='"+roomid+"';";
+    stmt.executeUpdate(update_room);
+    String insert="INSERT INTO RESERVATION VALUES("+reserveid+",'"+cdate+"','"+cout+"','"+roomid+"','"+activity+"','"+cust_id+"')";
     stmt.executeUpdate(insert);
     String pay="SELECT PAYMENTID FROM PAYMENT";
     ResultSet rs2=stmt.executeQuery(pay);
@@ -452,10 +522,33 @@ try{
     String nextpid=incpay(lastpid);
     String generate_new_payment="INSERT INTO PAYMENT(PAYMENTID,CUSTOMERID,RESERVATIONID) VALUES('"+nextpid+"','"+cust_id+"',"+reserveid+");";
     stmt.executeUpdate(generate_new_payment);
-
+    JOptionPane.showMessageDialog(this,"Booking was Successful");
+    reserve.setVisible(false);
+    payment.setVisible(true);
+    String calculate_amt="CALL CalculateFinalAmount('"+cust_id+"');";
+    stmt.executeQuery(calculate_amt);
+    String display_payment_status="SELECT C.FNAME,C.LNAME,C.EMAIL,R.ROOMID,P.AMOUNT,RS.CHECKIN,RS.CHECKOUT "
+            + "FROM CUSTOMER C,ROOMS R,RESERVATION RS "
+            + "WHERE C.CUSTOMERID=P.CUSTOMERID "
+            + "AND C.CUSTOMERID=RS.CUSTOMERID "
+            + "AND RS.ROOMID=R.ROOMID "
+            + "AND P.RESERVATIONID=RS.RESERVATIONID "
+            + "AND C.CUSTOMERID='"+cust_id+"';";
+    rs=stmt.executeQuery(display_payment_status);
+    rs.first();
+    String fname,lname,email,rmid,checkin,checkout;
+    fname=rs.getString(1);
+    lname=rs.getString(2);
+    email=rs.getString(3);
+    rmid=rs.getString(4);
+    int amount=rs.getInt(5);
+    checkin=rs.getString(6);
+    checkout=rs.getString(7);   
+    payment_status.setText(display_payment_status);
 }
 catch(Exception e){
     e.printStackTrace();
+     JOptionPane.showMessageDialog(this,"Unsuccessful Booking please try again");
 }
 
 
@@ -463,7 +556,39 @@ catch(Exception e){
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+try{
+    cust_id = new String(Files.readAllBytes(Paths.get("C:\\Users\\ashra\\OneDrive\\Documents\\NetBeansProjects\\SylvanGladeResort\\src\\Main\\filename.txt")));
+    Class.forName("java.sql.Driver");
+    con=DriverManager.getConnection(DB_URL, USER, PASS);
+    stmt=con.createStatement();
+    String reservationstatus="select c.customerid,c.fname,c.lname,r.reservationid,r.checkin,r.checkout,rm.roomid,rm.type,rm.capacity from customer c,reservation r, rooms rm where c.customerid=r.customerid and r.roomid=rm.roomid and c.customerid='"+cust_id+"';";
+    rs=stmt.executeQuery(reservationstatus);
+    rs.first();
+    String customerid=rs.getString(1);
+    String fname=rs.getString(2);
+    String lname=rs.getString(3);
+    int reservationid=rs.getInt(4);
+    String checkin=rs.getString(5);
+    String checkout=rs.getString(6);
+    String roomid=rs.getString(7);
+    String type=rs.getString(8);
+    int capacity=rs.getInt(9);
+    String printstatus="CustomerID:"+customerid+"\nName:"+fname+" "+lname+"\nReservationID:"+reservationid+"\nCheck In Date:"+checkin+"\nCheck Out Date:"+checkout+"\nRoomID:"+roomid+"\nType:"+type+"\nCapacity:"+capacity+"\n";
+    JOptionPane.showMessageDialog(this,printstatus);
+}
+catch(Exception e){
+    e.printStackTrace();
+}
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     String cust_id;
+    int duration;
 
     /**
      * @param args the command line arguments
@@ -503,16 +628,19 @@ catch(Exception e){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog abt;
     private javax.swing.JButton abtbtn;
+    private javax.swing.JComboBox<String> activitycbox;
     private javax.swing.JLabel bg;
     private javax.swing.JComboBox<String> day;
     private javax.swing.JButton disp;
     private javax.swing.JButton faciliiesbtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -523,6 +651,8 @@ catch(Exception e){
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> month;
+    private javax.swing.JDialog payment;
+    private javax.swing.JLabel payment_status;
     private javax.swing.JDialog reserve;
     private javax.swing.JButton reservebtn;
     private javax.swing.JComboBox<String> roomtype;

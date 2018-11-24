@@ -32,7 +32,6 @@ public class Register extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         p = new javax.swing.JLabel();
         cp = new javax.swing.JLabel();
@@ -44,7 +43,6 @@ public class Register extends javax.swing.JFrame {
         email = new javax.swing.JTextField();
         fname = new javax.swing.JTextField();
         lname = new javax.swing.JTextField();
-        custid = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         address = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
@@ -81,62 +79,56 @@ public class Register extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(800, 50, 440, 160);
 
-        jLabel3.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("CustomerID");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(80, 240, 220, 70);
-
         jLabel4.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Address");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(1020, 350, 220, 70);
+        jLabel4.setBounds(860, 250, 220, 70);
 
         p.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
         p.setForeground(new java.awt.Color(255, 255, 255));
         p.setText("Password");
         p.setToolTipText("");
         getContentPane().add(p);
-        p.setBounds(80, 340, 220, 70);
+        p.setBounds(70, 440, 220, 70);
 
         cp.setFont(new java.awt.Font("BlackChancery", 0, 28)); // NOI18N
         cp.setForeground(new java.awt.Color(255, 255, 255));
         cp.setText("Confirm Password");
         getContentPane().add(cp);
-        cp.setBounds(80, 440, 220, 70);
+        cp.setBounds(60, 540, 220, 70);
 
         jLabel7.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("First Name");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(80, 550, 220, 70);
+        jLabel7.setBounds(70, 230, 220, 70);
 
         jLabel8.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("LastName");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(80, 660, 220, 70);
+        jLabel8.setBounds(70, 350, 220, 70);
 
         jLabel9.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Email");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(80, 770, 220, 70);
+        jLabel9.setBounds(60, 650, 220, 70);
 
         jLabel10.setFont(new java.awt.Font("BlackChancery", 0, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Phone");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(1030, 240, 220, 70);
+        jLabel10.setBounds(60, 760, 220, 70);
 
         phone.setFont(new java.awt.Font("BlackChancery", 0, 30)); // NOI18N
         getContentPane().add(phone);
-        phone.setBounds(1300, 250, 420, 50);
+        phone.setBounds(320, 770, 420, 50);
 
         email.setFont(new java.awt.Font("BlackChancery", 0, 30)); // NOI18N
         getContentPane().add(email);
-        email.setBounds(310, 780, 420, 50);
+        email.setBounds(320, 670, 420, 50);
 
         fname.setFont(new java.awt.Font("BlackChancery", 0, 30)); // NOI18N
         fname.addActionListener(new java.awt.event.ActionListener() {
@@ -145,15 +137,11 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(fname);
-        fname.setBounds(310, 560, 420, 50);
+        fname.setBounds(310, 250, 420, 50);
 
         lname.setFont(new java.awt.Font("BlackChancery", 0, 30)); // NOI18N
         getContentPane().add(lname);
-        lname.setBounds(310, 670, 420, 50);
-
-        custid.setFont(new java.awt.Font("BlackChancery", 0, 30)); // NOI18N
-        getContentPane().add(custid);
-        custid.setBounds(310, 250, 420, 50);
+        lname.setBounds(320, 360, 420, 50);
 
         address.setColumns(20);
         address.setFont(new java.awt.Font("BlackChancery", 0, 30)); // NOI18N
@@ -161,7 +149,7 @@ public class Register extends javax.swing.JFrame {
         jScrollPane1.setViewportView(address);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(1300, 360, 420, 250);
+        jScrollPane1.setBounds(1110, 250, 420, 250);
 
         jButton1.setBackground(new java.awt.Color(255, 204, 255));
         jButton1.setFont(new java.awt.Font("BlackChancery", 0, 48)); // NOI18N
@@ -178,12 +166,12 @@ public class Register extends javax.swing.JFrame {
         confirmpwd.setFont(new java.awt.Font("BlackChancery", 0, 28)); // NOI18N
         confirmpwd.setEchoChar('*');
         getContentPane().add(confirmpwd);
-        confirmpwd.setBounds(310, 440, 420, 60);
+        confirmpwd.setBounds(320, 540, 420, 60);
 
         pwd.setFont(new java.awt.Font("BlackChancery", 0, 28)); // NOI18N
         pwd.setEchoChar('*');
         getContentPane().add(pwd);
-        pwd.setBounds(310, 350, 420, 60);
+        pwd.setBounds(310, 450, 420, 60);
 
         jButton2.setFont(new java.awt.Font("BlackChancery", 0, 48)); // NOI18N
         jButton2.setText("Back");
@@ -211,9 +199,18 @@ Statement stmt;
     private void fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fnameActionPerformed
-
+public String inccust(String a){
+    int res=0;
+    String cut=a.substring(2);
+    res=Integer.parseInt(cut);
+    res+=1;
+    String initial="CR";
+    String initial_append=Integer.toString(res);
+    String result=initial+initial_append;
+    return result;
+}
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-String cid=custid.getText();
+
 String password=pwd.getText(); 
 String confpassword=confirmpwd.getText();
 String f_name=fname.getText();
@@ -224,12 +221,18 @@ int ph = Integer.parseInt(phone.getText());
 if(password.equals(confpassword)){
     try{
         Class.forName("java.sql.Driver");
-            con=DriverManager.getConnection(DB_URL,USER,PASS);
+            con=DriverManager.getConnection(DB_URL,USER,PASS); 
+              stmt=con.createStatement();
+            String query="SELECT CUSTOMERID FROM CUSTOMER;";
+            rs=stmt.executeQuery(query);
+               rs.last();
+            String cusid=rs.getString(1);
+            String cid=inccust(cusid);
             String sql;
             sql="INSERT INTO CUSTOMER VALUES('"+cid+"','"+password+"','"+f_name+"','"+l_name+"','"+em+"','"+add+"',"+ph+");";
-            stmt=con.createStatement();
+          
             stmt.executeUpdate(sql);
-            JOptionPane.showMessageDialog(this,"Registration Successful");
+            JOptionPane.showMessageDialog(this,"Registration Successful\nYour CustomerID is "+cid+"\n Please use this CustomerID to login");
             this.setVisible(false);
             LoginPage l = new LoginPage();
             l.setVisible(true);
@@ -296,14 +299,12 @@ this.dispose();// TODO add your handling code here:
     private javax.swing.JLabel bg;
     private javax.swing.JPasswordField confirmpwd;
     private javax.swing.JLabel cp;
-    private javax.swing.JTextField custid;
     private javax.swing.JTextField email;
     private javax.swing.JTextField fname;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

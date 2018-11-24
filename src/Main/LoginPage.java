@@ -143,14 +143,27 @@ Statement stmt;
         String pass=password.getText();
         String usr="",pwd="";
         
-        if(login_id.substring(0,1)=="ST"){
+        if(login_id.charAt(0)=='S'){
             try{
             Class.forName("java.sql.Driver");
             con=DriverManager.getConnection(DB_URL,USER,PASS);
             String staffsql="SELECT STAFFID,PASSWORD FROM CUSTOMER WHERE STAFF='"+login_id+"'AND PASSWORD ='"+pass+"';";
+            stmt=con.createStatement();
+            rs=stmt.executeQuery(staffsql);
+            if(rs.next()){
+                try{
+                     Files.write(Paths.get("C:\\Users\\ashra\\OneDrive\\Documents\\NetBeansProjects\\SylvanGladeResort\\src\\Main\\filename.txt"), login_id.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+                StaffPage sp = new StaffPage();
+                sp.setVisible(true);
+                this.setVisible(false);
+            }
             }
             catch(Exception e){
-                
+                e.printStackTrace();
             }
         }
         else{
