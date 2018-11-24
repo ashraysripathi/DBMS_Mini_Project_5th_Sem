@@ -544,7 +544,8 @@ try{
     int amount=rs.getInt(5);
     checkin=rs.getString(6);
     checkout=rs.getString(7);   
-    payment_status.setText(display_payment_status);
+    String disp_status="";
+    payment_status.setText(disp_status);
 }
 catch(Exception e){
     e.printStackTrace();
